@@ -14,7 +14,7 @@ bool is_valid(vector<int> &s, int k, int n, int mid) {
             last_pos = s[i];
         }
 
-        if(cow == k) {
+        if(cow == k) { 
             return true;
         }
     }
