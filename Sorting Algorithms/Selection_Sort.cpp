@@ -6,33 +6,27 @@ int main() {
     cout<<"Enter the number of elements: ";
     cin>>n;
 
-    bool change = false;
-
     int arr[n];
     cout<<"Enter the elements: ";
     for(int i=0; i<n; i++) {
         cin>>arr[i];
     }
 
-    for(int i=0;i<n;i++) {
-        change = false;
-
-        for(int j=0;j<n-i-1;j++) {
-            if(arr[j] > arr[j+1]) {
-                swap(arr[j], arr[j+1]);
-                change = true;
+    for(int i=0;i<n-1;i++) {
+        int small = i;
+        for(int j=i+1;j<n;j++) {
+            if(arr[j] < arr[small]) {
+                small = j;
             }
         }
-
-        if(change == false) {
-            break;
-        }
+        swap(arr[small], arr[i]);
     }
 
     cout<<"Sorted Array: ";
     for(int i=0;i<n;i++) {
         cout<<arr[i]<<" ";
     }
-    
+
     return 0;
+
 }
