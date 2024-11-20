@@ -15,7 +15,7 @@ public:
                 nums1[index--] = nums1[i--];  // Compact way of using index-- and i-- later
             } 
             else {
-                nums1[index--] = nums2[j--];
+                nums1[index--] = nums2[j--];  // Compact way of using index-- and j-- later
             }
         }
 
