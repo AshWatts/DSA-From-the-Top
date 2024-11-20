@@ -1,11 +1,13 @@
 #include<iostream>
 #include<vector>
-#include<algorithm>
+#include<algorithm> 
 using namespace std;
 
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
+
+        // next_permutation(nums.begin(), nums.end());                           // Directly gives final answer
         int n = nums.size();
         int pivot = -1;
 
