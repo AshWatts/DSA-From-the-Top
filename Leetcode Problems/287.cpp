@@ -9,19 +9,18 @@ public:
         int fast = n[0];
 
         do {
-            slow = n[slow];
-            fast = n[n[fast]];
+            slow = n[slow];           // slow += 1
+            fast = n[n[fast]];        // fast += 2
         } while(slow != fast);
 
         slow = n[0];
 
         while(slow != fast) {
-            slow = n[slow];
-            fast = n[fast];
+            slow = n[slow];           // slow += 1
+            fast = n[fast];           // fast += 1
         }
 
         return slow;
-
     }
 };
 
