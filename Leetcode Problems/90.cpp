@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
 
-    void store_subsets(vector<int>& v, vector<int>& ans, int i, vector<vector<int>>& all_subsets) {
+    void store_subsets(vector<int>& v, vector<int>& ans, int i, vector<vector<int>>& all_subsets) {            // Most Optimal Solution
         if (i == v.size()) {
             all_subsets.push_back(ans);
             return;
