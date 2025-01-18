@@ -28,7 +28,7 @@ void quicksort(vector<int> &arr, int start, int end) {
     }
 }
  
-int main() {                                                 // Time Complexity: O(nlogn) in average case, O(n^2) in worst case (when pivot is smallest or largest element)
+int main() {                                                 // Time Complexity: O(nlogn) in average case, O(n^2) in worst case (when pivot is smallest or largest element) 
     vector<int> arr = {10, 7, 8, 9, 1, 5};
     int n = arr.size();
 
