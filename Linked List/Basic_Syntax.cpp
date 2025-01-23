@@ -21,19 +21,19 @@ class List {
         head = tail = NULL;
     }
 
-    void push_front(int val) {
+    void push_front(int val) {                             // Time Complexity: O(1)
         Node* newnode = new Node(val);
         if(head == NULL) {
             head = tail = newnode;
             return;
         }
         else { 
-            newnode->next = head;                           // (*newnode).next = head;
+            newnode->next = head;                          // (*newnode).next = head;
             head = newnode;
         }
     }
 
-    void push_back(int val) {
+    void push_back(int val) {                               // Time Complexity: O(1)
         Node* newnode = new Node(val);
         if(head == NULL) {
             head = tail = newnode;
@@ -45,7 +45,7 @@ class List {
         }
     }
 
-    void pop_front() {
+    void pop_front() {                                        // Time Complexity: O(1)
         if(head == NULL) {
             cout<<"Already Empty Linked List!";
             return;
@@ -58,7 +58,7 @@ class List {
         delete temp;
     } 
 
-    void pop_back() {
+    void pop_back() {                                       // Time Complexity: O(n)
         if(head == NULL) {
             cout<<"Already Empty Linked List!";
             return;
@@ -74,7 +74,46 @@ class List {
         tail = temp;
     }
 
-    void show() {
+    void insert(int val, int pos) {                   // Time Complexity: O(n)
+        if(pos < 0) {
+            cout<<"Invalid Position";
+            return;
+        }
+        if(pos == 0) {
+            push_front(val);
+            return;
+        }
+        Node* temp = head;
+        for(int i=0; i<pos-1; i++) {
+            if(temp == NULL) {
+                cout<<"Invalid position!"<<endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        Node* newnode = new Node(val);
+        newnode->next = temp->next;
+        temp->next = newnode;
+    }
+
+    void search(int val) {                             // Time Complexity: O(n)
+        int count = 0;
+        Node* temp = head;
+        while(temp != NULL) {
+            if(temp->data == val) {
+                cout<<"Position is "<<count+1<<endl;
+                return;
+            }
+            else {
+                temp = temp->next;
+                count++;
+            }
+        }
+        cout<<"Node DNE!"<<endl;
+        return;
+    }
+
+    void show() {                                        // Time Complexity: O(n)
         Node* temp = head;
         while(temp != NULL) {
             cout<<temp->data<<" ";
@@ -106,6 +145,14 @@ int main() {
     ll.pop_back();
 
     ll.show();
+
+    ll.insert(22, 3);
+
+    ll.show();
+
+    ll.search(22);
+
+    ll.search(7558);
 
     return 0;
 }
