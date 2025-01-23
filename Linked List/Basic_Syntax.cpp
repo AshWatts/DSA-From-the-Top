@@ -38,7 +38,7 @@ class List {
         if(head == NULL) {
             head = tail = newnode;
             return;
-        }
+        } 
         else {
             tail->next = newnode;
             tail = newnode;
