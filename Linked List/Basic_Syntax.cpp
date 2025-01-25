@@ -96,6 +96,29 @@ class List {
         temp->next = newnode;
     }
 
+    void remove(int val) {
+        if(head == NULL) {
+            cout<<"Empty Linked List!";
+            return;
+        }
+        if(head->data == val) {
+            pop_front();
+            return;
+        }
+        if(tail->data == val) {
+            pop_back();
+            return;
+        }
+        Node* temp = head;
+        while(temp->next->data != val) {
+            temp = temp->next;
+        }
+        Node* del = temp->next;
+        temp->next = temp->next->next;
+        del->next = NULL;
+        delete del;
+    }
+
     void search(int val) {                             // Time Complexity: O(n)
         int count = 0;
         Node* temp = head;
@@ -150,7 +173,11 @@ int main() {
 
     ll.show();
 
-    ll.search(22);
+    ll.remove(22);
+
+    ll.show();
+
+    ll.search(3);
 
     ll.search(7558);
 
