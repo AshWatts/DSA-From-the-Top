@@ -1,17 +1,24 @@
 #include<iostream>
+#include<unordered_map>
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-    int arr[n];
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
+    int n = 5;
+    int arr[n] = {1, 2, 3, 2, 5};
 
-    int hash[10000] = {0};
+    // int hash[10000] = {0};
+    // for(int i = 0; i < n; i++) {
+    //     hash[arr[i]]++;
+    // }
+
+    unordered_map<int, int> hash;
     for(int i = 0; i < n; i++) {
         hash[arr[i]]++;
+    }
+
+    cout<<"Element -> Frequency"<<endl;
+    for(auto i : hash) {
+        cout << i.first << " -> " << i.second << endl;
     }
 
     int q;
