@@ -44,14 +44,14 @@ public:
             delete temp;
         }
     }
-
+// 
     int front() {
         if(isempty()) {
             cout<<"Queue is empty!";
-            return;
+            return -1;
         }
         else {
-            
+            return head->data;
         }
     }
 
@@ -61,5 +61,16 @@ public:
 };
 
 int main() {
-    
+    Queue q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+
+    cout<<q.front()<<endl;
+
+    q.pop();
+
+    cout<<q.front()<<endl;
+
+    return 0;
 }
